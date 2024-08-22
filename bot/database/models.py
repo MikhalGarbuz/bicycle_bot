@@ -1,8 +1,9 @@
 from sqlalchemy import BigInteger, String, ForeignKey
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
+from config import connstr
 
-engine = create_async_engine(url='mysql+aiomysql://root:Mikhal-1104@localhost:3306/sellingbot')
+engine = create_async_engine(url=connstr)
 
 async_session = async_sessionmaker(engine)
 
